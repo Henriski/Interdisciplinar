@@ -145,57 +145,57 @@ INSERT INTO secretaria (pessoa_id, cargo) VALUES
 GO
 
 INSERT INTO profissional (pessoa_id, especialidade, registro_profissional) VALUES
-(12, 'Clinico Geral',  'CRM-SP-001234'),
-(13, 'Dermatologista', 'CRM-SP-005678'),
-(14, 'Cardiologista',  'CRM-SP-009012');
+(12, 'Cirurgião-Dentista',  'CRM-SP-001234'),
+(13, 'Odontopediatra',      'CRM-SP-005678'),
+(14, 'Protético',           'CRM-SP-009012');
 GO
 
 INSERT INTO consulta (data, horario, observacao, status_id, paciente_id, profissional_id, secretaria_id) VALUES
-('2025-01-10', '08:00', 'Consulta de rotina',           2, 1,  12, 11),
-('2025-01-12', '09:30', 'Queixa de dor de cabeca',      2, 2,  12, 11),
-('2025-01-15', '10:00', 'Acompanhamento dermatologico', 2, 3,  13, 15),
-('2025-02-03', '14:00', 'Check-up cardiaco',            2, 4,  14, 11),
-('2025-02-10', '08:30', 'Renovacao de receita',         2, 5,  12, 15),
+('2025-01-10', '08:00', 'Dor de dente',                 2, 1,  12, 11),
+('2025-01-12', '09:30', 'Cárie',                        2, 2,  12, 11),
+('2025-01-15', '10:00', 'Próteses',                     2, 3,  13, 15),
+('2025-02-03', '14:00', 'Limpeza',                      2, 4,  14, 11),
+('2025-02-10', '08:30', 'Reabilitação Fratura',         2, 5,  12, 15),
 ('2025-03-01', '11:00', 'Paciente cancelou',            3, 6,  13, 11),
 ('2025-03-05', '15:30', NULL,                           1, 7,  14, 15),
 ('2025-03-08', '09:00', 'Primeira consulta',            1, 8,  12, 11),
 ('2025-03-12', '13:00', NULL,                           1, 9,  13, 15),
 ('2025-03-20', '16:00', 'Retorno apos exames',          1, 10, 14, 11),
 ('2025-04-02', '10:30', NULL,                           1, 1,  13, 15),
-('2025-04-10', '08:00', 'Consulta preventiva',          1, 2,  14, 11);
+('2025-04-10', '08:00', 'Clareamento',                  1, 2,  14, 11);
 GO
 
 INSERT INTO tratamento (descricao, data_inicio, data_fim, status_id, paciente_id, profissional_id) VALUES
-('Tratamento para hipertensao',         '2025-01-15', '2025-07-15', 4, 1,  14),
-('Acompanhamento dermatologico - acne', '2025-01-20', '2025-04-20', 4, 3,  13),
-('Controle glicemico',                  '2025-02-01', '2025-08-01', 4, 4,  12),
-('Tratamento cardiaco pos-infarto',     '2025-02-05', NULL,         4, 4,  14),
-('Reabilitacao pos-fratura',            '2025-02-10', '2025-05-10', 4, 5,  12),
-('Tratamento de eczema',                '2025-02-15', '2025-05-15', 4, 6,  13),
-('Controle de colesterol',              '2025-03-01', '2025-09-01', 4, 7,  14),
-('Acompanhamento pre-natal',            '2025-03-05', '2025-12-05', 4, 8,  12),
-('Tratamento de psoriase',              '2025-03-10', NULL,         4, 9,  13),
-('Reabilitacao cardiaca',               '2025-03-15', '2025-09-15', 4, 10, 14),
-('Tratamento de rinite alergica',       '2024-10-01', '2024-12-31', 6, 2,  12),
-('Acompanhamento de diabetes tipo 2',   '2024-11-01', NULL,         4, 1,  12);
+('Dor de dente',                    '2025-01-15', '2025-07-15', 4, 1,  14),
+('Cárie',                           '2025-01-20', '2025-04-20', 4, 3,  13),
+('Próteses',                        '2025-02-01', '2025-08-01', 4, 4,  12),
+('Limpeza',                         '2025-02-05', NULL,         4, 4,  14),
+('Reabilitação Fratura',            '2025-02-10', '2025-05-10', 4, 5,  12),
+('Clareamento',                     '2025-02-15', '2025-05-15', 4, 6,  13),
+('Implante',                        '2025-03-01', '2025-09-01', 4, 7,  14),
+('Restauração',                     '2025-03-05', '2025-12-05', 4, 8,  12),
+('Faceta',                          '2025-03-10', NULL,         4, 9,  13),
+('Gengivoplastia',                  '2025-03-15', '2025-09-15', 4, 10, 14),
+('Harmonização Orofacial',          '2024-10-01', '2024-12-31', 6, 2,  12),
+('Acompanhamento',                  '2024-11-01', NULL,         4, 1,  12);
 GO
 
 INSERT INTO etapa (descricao, ordem, status_id, tratamento_id) VALUES
 ('Avaliacao inicial e anamnese',              1, 6, 1),
 ('Exames laboratoriais',                      2, 6, 1),
-('Inicio da medicacao anti-hipertensiva',     3, 4, 1),
+('Inicio',                                    3, 4, 1),
 ('Reavaliacao em 30 dias',                    4, 5, 1),
-('Limpeza de pele profunda',                  1, 6, 2),
-('Aplicacao de peeling quimico',              2, 4, 2),
+('Limpeza',                                   1, 6, 2),
+('Aplicacao quimica',                         2, 4, 2),
 ('Manutencao mensal',                         3, 5, 2),
 ('Consulta de avaliacao inicial',             1, 6, 3),
-('Orientacao nutricional',                    2, 4, 3),
-('Retorno e ajuste de medicacao',             3, 5, 3),
-('ECG e ecocardiograma',                      1, 6, 4),
+('Orientacao',                                2, 4, 3),
+('Retorno e ajuste',                          3, 5, 3),
+('Acompanhamento',                            1, 6, 4),
 ('Inicio do protocolo medicamentoso',         2, 4, 4),
-('Fisioterapia respiratoria - semana 1',      1, 6, 5),
-('Fisioterapia respiratoria - semana 2',      2, 4, 5),
-('Alta e orientacoes finais',                 3, 5, 5);
+('Restauracao',                               1, 6, 5),
+('Finalizacao',                               2, 4, 5),
+('Orientacoes finais',                        3, 5, 5);
 GO
 
 INSERT INTO orcamento (valor_total, data_criacao, status_id, consulta_id, tratamento_id) VALUES
